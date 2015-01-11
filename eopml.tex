@@ -1,0 +1,147 @@
+% ---- ETD Document Class and Useful Packages ---- %
+\documentclass{ucetd}
+\usepackage{subfigure,epsfig,amsfonts}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd} % \llbracket, etc.
+\usepackage{eulervm} % for math
+\usepackage{bm} % for \bm (making bold in math mode)
+
+
+\usepackage{listings}
+\newcommand{\CodeStyle}{\ttfamily}
+\newcommand{\CodeStylex}[1]{\texttt{#1}}
+
+% Code and definitions embedded in text.
+\newcommand{\tcode}[1]{\CodeStylex{#1}}
+
+\lstset{language=C++,
+        basicstyle=\CodeStyle\normalsize,
+        stringstyle=,
+        xleftmargin=1em,
+        showstringspaces=false,
+        commentstyle=\itshape\rmfamily,
+        keepspaces=true,
+        texcl=true,
+        columns=flexible,
+}
+
+\lstnewenvironment{codeblock}
+{
+ \lstset{escapechar=@}
+ \renewcommand{\tcode}[1]{\textup{\CodeStyle##1}}
+}
+{
+}
+
+\usepackage{amsthm}
+
+\newtheoremstyle{AddisonWesley}%
+  {6pt}{6pt}%    Space above and below
+  {}%            Body style
+  {}%            Heading indent amount
+  {\bfseries}{}% Heading font and punctation after it
+  { }%           Space after heading
+  {}%            Head spec (empty = same as `plain' style)
+\theoremstyle{AddisonWesley}
+
+\newcommand{\keyword}[1]{\textsf{\textbf{#1}}}  % property, requires
+\newcommand{\concept}[1]{\mathit{#1}}
+\newcommand{\func}[1]{\mathsf{#1}}
+\newcommand{\property}[1]{\mathsf{#1}} % same as \func for now
+\newcommand{\type}[1]{\mathsf{#1}}     % same as \func for now
+
+\newcommand{\lcm}[0]{\mathrm{lcm}}
+
+\newcommand{\idxprop}[1]{\index{#1 property@$\property{#1}$ property}
+    \index{property!#1@$\property{#1}$}}
+\newcommand{\idxtypefunc}[1]{\index{#1 type function@$\func{#1}$ type function}%
+    \index{type function!#1@$\func{#1}$}}
+
+\newcommand{\bookcodesize}{}
+
+\newcommand{\conceptequiv}{\triangleq}
+\newenvironment{conceptdef}{%
+\begin{list}{$\wedge$}{%
+\addtolength{\leftmargin}{1em}%
+\setlength{\topsep}{0cm}%
+\setlength{\parsep}{0cm}%
+\setlength{\partopsep}{0cm}%
+\setlength{\itemsep}{0cm}}}{%
+\end{list}}
+
+\newenvironment{propertydef}{%
+\begin{list}{}%
+{\setlength{\leftmargin}{1em}%
+\item[]}}%
+{\end{list}}
+
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.5\baselineskip}
+
+
+\usepackage[multiple]{footmisc}
+
+
+%% Mathematics commands
+\newcommand{\Circ}{\operatorname{Circ}}
+\newcommand{\diag}{\operatorname{diag}}
+
+%% Use these commands to set biographic information for the title page:
+\title{Elements of Programming Machine Learning}
+\author{Mark Stoehr}
+\department{Department of Computer Science}
+\division{Physical Sciences Division}
+\degree{Ph.D.}
+\date{December 2015}
+
+%% Use these commands to set a dedication and epigraph text
+\dedication{Dedication Text}
+\epigraph{Epigraph Text}
+
+
+\begin{document}
+%% Basic setup commands
+% If you don't want a title page comment out the next line and uncomment the line after it:
+\maketitle
+%\omittitle
+
+% These lines can be commented out to disable the copyright/dedication/epigraph pages
+\makecopyright
+\makededication
+\makeepigraph
+
+
+%% Make the various tables of contents
+\tableofcontents
+\listoffigures
+\listoftables
+
+\acknowledgments
+% Enter Acknowledgements here
+
+\abstract
+% Enter Abstract here
+
+
+\mainmatter
+% Main body of text follows
+
+
+
+\input{chapters.tex}
+
+
+% Format a LaTeX bibliography
+\bibliography{eopml.bib}
+\bibliographystyle{plain}
+
+% Figures and tables, if you decide to leave them to the end
+%\input{figure}
+%\input{table}
+
+\end{document}
+
+

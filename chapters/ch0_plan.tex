@@ -1,0 +1,115 @@
+\chapter{Plan for the Work}
+
+This work aspires to systematically organize the programming of
+machine learning.  The work is meant to be open and provide tools so
+that a variety of authors may contribute to the project.  The
+inspiration for this work is Euclid's Elements, The Elements of
+Programming, and Homotopy Type Theory.  The former served as the basis
+for the development of axiomatic approaches to mathematics.  An
+important observation is that the propositions of Euclid were
+accompanied with constructive proofs that may be performed by the
+reader with a physical compass and straight-edge.  The mathematics is
+a model for real objects and operations that may be performed on them.  Another way to think about it
+is that the proofs themselves could be compiled into programs of geometric construction.
+
+Such a relationship to the physical has been broken for nearly a
+century due to the set-focused approach to mathematical foundations
+adopted in the early twentieth century.  With such an approach
+mathematical propositions are compiled into purely abstract
+entities.  The constructive work of Euclid became quite divorced
+from the foundations common to the working mathematician.
+
+This has tremendous consequences for programming.  Dijkstra observed that it is a mathematical discipline
+even if the mathematics differ considerably from those of interest to the mathematician.  Stepanov and McJones
+observe that programming is about bits and operations on them that can be realized in physical machines.  Indeed, that is the
+basis for programming introduced in Donald Knuths ``Art of Computer Programming''.  
+
+Programs are data, and data are programs was an essential insight of Turing.  The insight of Homotopy Type Theory
+is that programs are proofs (indeed this is the essence of the Curry-Howard Correspondence)
+and types are propositions.  
+
+Most work in this area is of interest to logicians and people working with functional programming languages.
+We argue for a return to bit-focused programs and programs that do not make a great deal of use of recursion so that they
+are simple programs that are easy to reason about and also easy to implement on a real machine in real hardware.  So, we are
+returning back to the Euclidean notion of proofs as programs: i.e. concrete procedures that may be applied to concrete entities.
+
+
+
+  combined the concrete and abstract notions of
+geometry together into a long-running work presented with a
+magnificent style for a reader to enjoy.  The work gives a
+correspondence between straight-edge compass constructions and
+abstract geometry.  Insight into straight-edge compass constructions
+is derived through the use of these correspondences.  The present work
+is an attempt to perform an analogous work between bits and
+mathematical propositions--Leibniz's dream.  This task has been
+considered by many previous works and a notable instance is the
+Curry-Howard Correspondence.  That is concerned, however, with
+functions as the primitive objects belonging to mathematical type
+theory.
+
+This work is concerned with programming defined as manipulating bits
+as is given to us from Leibniz.  The direct ancestor of this work is
+the {\it Elements of Programming} \cite{stepanov2009elements} which
+develops ideas of generic programming in several contexts.  We wish to
+continue that, but with more explicit recognition of Curry-Howard
+correspondence by writing code throughout the text which will serve as
+proof mechanisms.  We will not shy away from purely abstract proofs
+either, but our principal concern is about {\it objects} which is a
+representation of a {\it value} in memory, i.e. a {\it typed datum}.
+The object {\it type} is a way of storing and modifying values in
+memory.
+
+The Curry-Howard correspondence, however, is most often used to
+understand proofs as functions so that functions are the object of
+interest.  We focus on bits and the proof correspondence to bit
+manipulations thus is more closely tied to Niklaus Wirth with {\it
+  Systematic Programming}.  The innovation beyond Wirth's and
+Dijkstra's {\it structured programming } is that we will construct
+programs that are, in fact, proofs (although they will need extensive
+comments to verify this).  Dijkstra says to construct a proof
+simulataneous with the program but we more closely tie the two
+operations specifically with our bit-based focus.  The idea is not new
+and is purely a transplant of the literate program.  Indeed, we take
+Knuth's idea of organizing a central repository of organized knowledge
+and then apply the literate programming idea to represent that
+knowledge as a computer program, and we prove things with it.
+
+One final addition to this book is to specifically focus on
+statistical problems.  The author does not recognize any meaningful
+difference between reasoning in statistics or machine learning so
+terms from both disciplines will be used interchangeably.  The
+inclusion of statistics is particularly apt since there have been few
+attempts to formalize notions of relating the concrete with the
+abstract in statistical settings with the exception of an insightful
+paper of Mcullagh. Statistics and Machine Learning are also rarely
+formalized and this book takes a constructive view so that the discussion
+of those topics is tightly interwoven to computer programs that can be run. The
+programs essential to them are those from optimization, statistical tests,
+ and feature construction.  These are the programs that characterize work in 
+statistics and machine learning.
+
+We also harkon back to older work in statistics that tied the subject more closely to economics.
+Indeed we will find that decision theory and statistics may be written together
+and we can connect these with standard ideas in machine learning.  The mathematics we use
+are going to be derived from the type theoretic perspective.  Our interest in these types is so that we can
+relate formal mathematics with actual bit representations.  Thus, we are performaing an instance of
+synthetic mathematics in the spirit of Euclid.
+
+The purpose of this approach is to produce generic machine
+learning/statistical programs.  Develop the underlying algorithms that
+make these systems operate and define constructions between them.  We
+want a reusable system.  The main purpose of genericity is because
+generic code can be reasoned about analytically more easily.
+Genericity puts many synthetic notions into a unifed representation
+that can then be formally reasoned about using analytic methods.  This
+enables us to prove things about the code for the human code reviewer
+to understand.  Furthermore, this means that it should be easier to write
+new machine learning programs applied to new datasets and new problems
+after working through this book and implementing such systems.
+
+The first topics we consider are related to the author's areas of
+research and work: speaker recognition, bayesian fusion of systems,
+and deep neural networks.  To get to these topics, however we must
+excavate and systematically organize programs that prove things about
+data and get the reasoning just right.
